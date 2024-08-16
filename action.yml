@@ -1,0 +1,28 @@
+name: Upload release asset
+description: Upload release asset GitHub action
+author: Lapiniot
+
+inputs:
+  release_id:
+    description: The unique identifier of the release
+    required: true
+  name:
+    description: The name of the asset
+    required: true
+  path:
+    description: Asset file path
+    required: true
+  content_type:
+    description: Media type of the asset
+    required: true
+  label:
+    description: Label for the asset
+    required: false
+
+outputs:
+  browser_download_url:
+    description: Browser download url
+
+runs: 
+  using: node20
+  main: dist/index.js
