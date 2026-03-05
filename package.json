@@ -3,9 +3,10 @@
   "version": "2.0.0",
   "description": "upload-release-asset GH action",
   "type": "module",
-  "main": "src/index.ts",
+  "main": "dist/index.js",
   "scripts": {
-    "build": "tsc && ncc build lib/index.js"
+    "build": "tsc",
+    "release": "ncc build src/index.ts -o dist"
   },
   "engines": {
     "node": ">=24"

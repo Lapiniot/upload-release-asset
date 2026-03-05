@@ -38311,7 +38311,7 @@ function glob_hashFiles(patterns_1) {
 const promises_namespaceObject = __WEBPACK_EXTERNAL_createRequire(import.meta.url)("node:fs/promises");
 ;// CONCATENATED MODULE: external "node:path"
 const external_node_path_namespaceObject = __WEBPACK_EXTERNAL_createRequire(import.meta.url)("node:path");
-;// CONCATENATED MODULE: ./lib/index.js
+;// CONCATENATED MODULE: ./src/index.ts
 
 
 
@@ -38338,7 +38338,7 @@ async function run() {
                 const response = await uploadFileAsset(client, filePath, owner, repo, releaseId, name ?? external_node_path_namespaceObject.basename(name), label, contentType);
                 const { data: { browser_download_url: downloadUrl } } = response;
                 info(`Asset download url: ${downloadUrl}`);
-                setOutput("browser_download_url", downloadUrl);
+                setOutput("browser-download-url", downloadUrl);
                 break;
             default:
                 const urls = [];
@@ -38349,7 +38349,7 @@ async function run() {
                     info(`Asset download url: ${downloadUrl}`);
                     urls.push(downloadUrl);
                 }
-                setOutput("browser_download_urls", urls.join("\n"));
+                setOutput("browser-download-urls", urls.join("\n"));
                 break;
         }
     }
