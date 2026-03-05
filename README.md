@@ -25,24 +25,24 @@ jobs:
             - name: Upload Release Asset
                 uses: Lapiniot/upload-release-asset@master
                 with:
-                    release_id: ${{ github.event.release.id }}
+                    release-id: ${{ github.event.release.id }}
                     path: ./path/to/your-artifact.zip
                     name: your-artifact.zip
-                    content_type: application/zip
+                    content-type: application/zip
                 env:
                     GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 ```
 ## Inputs
-- `release_id` (required): The unique identifier of the release
+- `release-id` (required): The unique identifier of the release
 - `path` (required): File path or wild-card pattern to describe assets for upload
 - `name` (optional): The name of the asset (optional, applies only to single asset file, otherwise original file names will be used)
-- `content_type` (required): Media type of the asset file(s)
+- `content-type` (required): Media type of the asset file(s)
 - `label` (optional): Label for the asset(s)
 - `include-hidden-files` (optional): Whether to include hidden files
 
 ## Outputs
-- `browser_download_url`: Browser download url, if the only asset file was specified for upload
-- `browser_download_urls`: Browser download url list (new-line delimited), if multiple assets have been uploaded
+- `browser-download-url`: Browser download url, if the only asset file was specified for upload
+- `browser-download-urls`: Browser download url list (new-line delimited), if multiple assets have been uploaded
 
 ## Environment Variables
 
