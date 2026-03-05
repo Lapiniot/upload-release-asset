@@ -3,7 +3,7 @@ description: Upload release asset GitHub action
 author: Lapiniot
 
 inputs:
-  release_id:
+  release-id:
     description: The unique identifier of the release
     required: true
   name:
@@ -12,7 +12,7 @@ inputs:
   path:
     description: File path or wild-card pattern to describe assets for upload
     required: true
-  content_type:
+  content-type:
     description: Media type of the asset file(s)
     required: true
   include-hidden-files:
@@ -24,9 +24,9 @@ inputs:
     required: false
 
 outputs:
-  browser_download_url:
+  browser-download-url:
     description: Browser download url, if the only asset file was specified for upload
-  rowser_download_urls:
+  browser-download-urls:
     description: Browser download url list (new-line delimited), if multiple assets have been uploaded
 
 runs:

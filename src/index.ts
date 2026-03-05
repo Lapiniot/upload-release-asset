@@ -32,7 +32,7 @@ async function run() {
                     name ?? path.basename(name), label, contentType);
                 const { data: { browser_download_url: downloadUrl } } = response;
                 info(`Asset download url: ${downloadUrl}`);
-                setOutput("browser_download_url", downloadUrl);
+                setOutput("browser-download-url", downloadUrl);
                 break;
 
             default:
@@ -46,7 +46,7 @@ async function run() {
                     urls.push(downloadUrl);
                 }
 
-                setOutput("browser_download_urls", urls.join("\n"));
+                setOutput("browser-download-urls", urls.join("\n"));
                 break;
         }
     } catch (error) {
