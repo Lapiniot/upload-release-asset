@@ -1,19 +1,39 @@
 {
   "name": "upload-release-asset",
-  "version": "1.0.0",
+  "version": "2.0.0",
   "description": "upload-release-asset GH action",
+  "type": "module",
   "main": "src/index.ts",
   "scripts": {
     "build": "tsc && ncc build lib/index.js"
   },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
+  "engines": {
+    "node": ">=24"
+  },
+  "author": "Lapiniot",
+  "license": "MIT",
+  "keywords": [
+    "Actions",
+    "GitHub",
+    "Upload",
+    "Release",
+    "Assets"
+  ],
+  "homepage": "https://github.com/Lapiniot/upload-release-asset#readme",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Lapiniot/upload-release-asset.git"
+  },
+  "bugs": {
+    "url": "https://github.com/Lapiniot/upload-release-asset/issues"
+  },
   "devDependencies": {
-    "@actions/core": "^1.10.1",
-    "@actions/github": "^6.0.0",
-    "@types/node": "^22.3.0",
-    "typescript": "^5.5.4",
-    "@vercel/ncc": "^0.38.1"
+    "@actions/core": "^3.0.0",
+    "@actions/github": "^9.0.0",
+    "@actions/glob": "^0.6.1",
+    "@types/node": "^25.3.3",
+    "typescript": "^5.9.3",
+    "@vercel/ncc": "^0.38.4",
+    "ts-node": "^10.9.2"
   }
 }

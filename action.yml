@@ -7,22 +7,28 @@ inputs:
     description: The unique identifier of the release
     required: true
   name:
-    description: The name of the asset
-    required: true
+    description: The name of the asset (optional, applies only to single asset file, otherwise original file names will be used)
+    required: false
   path:
-    description: Asset file path
+    description: File path or wild-card pattern to describe assets for upload
     required: true
   content_type:
-    description: Media type of the asset
+    description: Media type of the asset file(s)
     required: true
+  include-hidden-files:
+    description: Whether to include hidden files
+    required: false
+    default: false
   label:
-    description: Label for the asset
+    description: Label for the asset(s)
     required: false
 
 outputs:
   browser_download_url:
-    description: Browser download url
+    description: Browser download url, if the only asset file was specified for upload
+  rowser_download_urls:
+    description: Browser download url list (new-line delimited), if multiple assets have been uploaded
 
-runs: 
-  using: node20
+runs:
+  using: "node24"
   main: dist/index.js

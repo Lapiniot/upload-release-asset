@@ -1,6 +1,6 @@
 # Upload Release Asset GitHub Action
 
-This action uploads a release asset to a specified GitHub release. It is useful for attaching build artifacts (such as binaries, archives, or other files) to your project's releases.
+This action uploads a release asset(s) to a specified GitHub release. It is useful for attaching build artifacts (such as binaries, archives, or other files) to your project's releases.
 
 ## Usage
 
@@ -33,15 +33,16 @@ jobs:
                     GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 ```
 ## Inputs
-- `release_id` (required): The ID of the release to which the asset will be uploaded.
-- `path` (required): The file path of the asset to upload.
-- `name` (required): The name of the uploaded asset.
-- `content_type`: (required): The MIME type of the asset.
-- `label`: (optional): A label for the asset.
+- `release_id` (required): The unique identifier of the release
+- `path` (required): File path or wild-card pattern to describe assets for upload
+- `name` (optional): The name of the asset (optional, applies only to single asset file, otherwise original file names will be used)
+- `content_type` (required): Media type of the asset file(s)
+- `label` (optional): Label for the asset(s)
+- `include-hidden-files` (optional): Whether to include hidden files
 
 ## Outputs
-- `browser_download_url`: The URL to download the uploaded asset.
-
+- `browser_download_url`: Browser download url, if the only asset file was specified for upload
+- `browser_download_urls`: Browser download url list (new-line delimited), if multiple assets have been uploaded
 
 ## Environment Variables
 
