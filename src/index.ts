@@ -1,4 +1,4 @@
-import { getInput, info, setFailed, setOutput } from "@actions/core";
+import { getBooleanInput, getInput, info, setFailed, setOutput } from "@actions/core";
 import { context, getOctokit } from "@actions/github";
 import * as glob from "@actions/glob";
 import { Octokit } from "@octokit/core";
@@ -17,7 +17,7 @@ async function run() {
         const label = getInput("label");
         const releaseId = parseInt(getInput("release-id", { required: true }));
         const contentType = getInput("content-type", { required: true });
-        const includeHiddenFiles = getInput("include-hidden-files") === "true";
+        const includeHiddenFiles = getBooleanInput("include-hidden-files");
 
         const matches = await findMatchingCandidates(pathPatterns, includeHiddenFiles);
 

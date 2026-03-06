@@ -38327,7 +38327,7 @@ async function run() {
         const label = getInput("label");
         const releaseId = parseInt(getInput("release-id", { required: true }));
         const contentType = getInput("content-type", { required: true });
-        const includeHiddenFiles = getInput("include-hidden-files") === "true";
+        const includeHiddenFiles = getBooleanInput("include-hidden-files");
         const matches = await findMatchingCandidates(pathPatterns, includeHiddenFiles);
         switch (matches.length) {
             case 0:
